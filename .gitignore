@@ -1,0 +1,49 @@
+# Confidential data
+data/
+
+# Experiment outputs and model artifacts
+runs/
+outputs/
+*.pth
+*.pt
+*.pkl
+*.joblib
+*.csv
+*.log
+*.png
+*.jpg
+*.jpeg
+
+# Exploratory work and local drafts
+notebooks/
+*.ipynb
+src old/
+src new/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Hydra
+.hydra/
+multirun/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example

@@ -1,0 +1,44 @@
+hydra:
+  run:
+    dir: .
+  job:
+    chdir: false
+
+seed: 1
+device: auto  # auto | cpu | cuda | mps
+
+data:
+  # Replace these placeholders with local dataset identifiers.
+  Source_File: "source_domain"
+  Target_File: "target_domain"
+  verbose_cols: false
+  include_CO: true
+
+  # Input-window length, prediction horizon, and stride.
+  T_x: 70
+  T_y: 1
+  s: 5
+
+  train_split: 0.8
+  val_split: 0.2
+
+model:
+  hidden_size: 32
+  num_layers: 4
+  dropout: 0.3
+
+train:
+  batch_size: 64
+  learning_rate: 1e-4
+  epochs: 500
+  weight_decay: 1e-3
+  patience: 25
+
+  # Supported options: coral | mmd | dare
+  da_type: "coral"
+  da_lambda: 1.0
+
+output:
+  dir: runs
+  exp_name: "pemfc_domain_adaptation"
+  overwrite: false
